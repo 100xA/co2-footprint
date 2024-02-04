@@ -1,0 +1,24 @@
+{
+    "app" :"CO2-Footprint",
+    "navbar" :{
+        "services" : "Services",
+        "contact" : "Contact",
+        "pricing" : "Pricing"
+       },
+    "table":{
+        "sort": "Sort",
+        "sources": "Sources",
+        "emissions" :"Emissions",
+        "select":{
+            "all" : "All",
+            "countries" :"Countries",
+            "companies" :"Companies"
+        }
+    },
+    "footer" :{
+      "all_rights" :"All Rights reserved",
+      "about" : "About",
+      "licensing" :"Licensing"
+      
+    }
+}

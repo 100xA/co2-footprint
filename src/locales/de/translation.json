@@ -1,0 +1,24 @@
+{
+    "app" :"CO2 Fußabdruck",
+    "navbar" :{
+        "services" : "Leistungen",
+        "contact" : "Kontakt",
+        "pricing" : "Preise"
+       },
+    "table":{
+        "sort": "Sortieren",
+        "sources": "Quellen",
+        "emissions" :"Emissionen",
+        "select":{
+            "all" : "Alle",
+            "countries" :"Länder",
+            "companies" :"Unternehmen"
+        }
+    },
+    "footer" :{
+      "all_rights" :"Alle Rechte vorbehalten",
+      "about" : "Über uns",
+      "licensing" :"Lizenzierung"
+      
+    }
+}

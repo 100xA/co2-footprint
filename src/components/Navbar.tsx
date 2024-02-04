@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export function Navbar() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <nav className="bg-dark-green border-gray-200 dark:bg-g dark:border-gray-700">
@@ -10,7 +14,7 @@ export function Navbar() {
               alt="Flowbite Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Co2 Footprint
+              {t("app")}
             </span>
           </a>
           <button
@@ -51,16 +55,7 @@ export function Navbar() {
                   <ul
                     className="py-2 text-sm text-gray-700 dark:text-gray-400"
                     aria-labelledby="dropdownLargeButton"
-                  >
-                  </ul>
-                  <div className="py-1">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 "
-                    >
-                      Sign out
-                    </a>
-                  </div>
+                  ></ul>
                 </div>
               </li>
               <li>
@@ -68,7 +63,7 @@ export function Navbar() {
                   href="#"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
                 >
-                  Services
+                  {t("navbar.services")}
                 </a>
               </li>
               <li>
@@ -76,7 +71,7 @@ export function Navbar() {
                   href="#"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
                 >
-                  Pricing
+                  {t("navbar.pricing")}
                 </a>
               </li>
               <li>
@@ -84,7 +79,7 @@ export function Navbar() {
                   href="#"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
                 >
-                  Contact
+                  {t("navbar.contact")}
                 </a>
               </li>
             </ul>
