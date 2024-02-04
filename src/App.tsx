@@ -18,19 +18,24 @@ function App() {
   return (
     <body className="h-screen bg-mint-green">
       {" "}
-      <select
-        value={i18n.resolvedLanguage}
-        onChange={handleChangeFilterChange}
-      >
-        {Object.entries(supportedLngs).map(([code, name]) => (
-          <option
-            value={code}
-            key={code}
-          >
-            {name}
-          </option>
-        ))}
-      </select>
+      <div className="bg-dark-green">
+        <select
+          className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none text-dark-green bg-mint-green rounded-lg border hover:bg-gray-100focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          id="actionsDropdownButton"
+          value={i18n.resolvedLanguage}
+          onChange={handleChangeFilterChange}
+        >
+          {Object.entries(supportedLngs).map(([code, name]) => (
+            <option
+              className="text-white"
+              value={code}
+              key={code}
+            >
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
       <Navbar /> <Table />
       <Footer />
     </body>
