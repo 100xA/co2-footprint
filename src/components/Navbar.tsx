@@ -1,91 +1,104 @@
+// NavigationBar.tsx
+
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export function Navbar() {
+const NavBar: React.FC = () => {
   const { t } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div>
-      <nav className="bg-dark-green border-gray-200 dark:bg-g dark:border-gray-700">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a className="flex items-center space-x-3 rtl:space-x-reverse">
+    <nav className="bg-dark-green">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
+              className="h-8 w-8"
               src="https://th.bing.com/th/id/OIG2.0WimXLWz7KIoITujeDyU?w=1024&h=1024&rs=1&pid=ImgDetMain"
-              className="h-8"
-              alt="Flowbite Logo"
+              alt="Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="text-xl font-semibold whitespace-nowrap text-white">
               {t("app")}
             </span>
-          </a>
-          <button
-            data-collapse-toggle="navbar-dropdown"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-dropdown"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
+          </div>
+
+          {/* Menu items */}
+          <div className="hidden md:flex space-x-4">
+            <a
+              href="#"
+              className="text-white hover:text-gray-300"
             >
-              <path
+              {t("navbar.services")}
+            </a>
+            <a
+              href="#"
+              className="text-white hover:text-gray-300"
+            >
+              {t("navbar.pricing")}
+            </a>
+            <a
+              href="#"
+              className="text-white hover:text-gray-300"
+            >
+              {t("navbar.contact")}
+            </a>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-white hover:text-gray-300 focus:outline-none"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-          <div
-            className="hidden w-full md:block md:w-auto"
-            id="navbar-dropdown"
-          >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li></li>
-              <li>
-                <div
-                  id="dropdownNavbar"
-                  className="z-10 hidden font-normal divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-                >
-                  <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-400"
-                    aria-labelledby="dropdownLargeButton"
-                  ></ul>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
-                >
-                  {t("navbar.services")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
-                >
-                  {t("navbar.pricing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:text-mint-green"
-                >
-                  {t("navbar.contact")}
-                </a>
-              </li>
-            </ul>
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a
+              href="#"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Services
+            </a>
+            <a
+              href="#"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Pricing
+            </a>
+            <a
+              href="#"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
   );
-}
+};
+
+export default NavBar;

@@ -1,10 +1,11 @@
 import "./App.css";
-import { Navbar } from "./components/Navbar";
+
 import { Footer } from "./components/Footer";
 import Table from "./components/Table";
 
 import { useState } from "react";
 import i18n, { supportedLngs } from "./i18n/config";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [filterLanugage, setLanguage] = useState("");

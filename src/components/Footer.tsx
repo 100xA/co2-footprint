@@ -10,7 +10,7 @@ export function Footer() {
           href="https://flowbite.com/"
           className="hover:underline text-mint-green"
         >
-          {t("app")},
+          {t("app")}{" "}
         </a>
         {t("footer.all_rights")}
       </span>

@@ -13,16 +13,15 @@ const initialData: EmissionData[] = [
   { source: "Germany", co2Emission: 200.05, isCountry: true },
   { source: "Starbucks", co2Emission: 3213.05, isCountry: false },
   { source: "Italy", co2Emission: 312305, isCountry: true },
-  { source: "Henkel", co2Emission: 103123205, isCountry: false },
-  { source: "USA", co2Emission: 100.05, isCountry: true },
-  { source: "Germany", co2Emission: 200.05, isCountry: true },
-  { source: "Starbucks", co2Emission: 3213.05, isCountry: false },
-  { source: "Italy", co2Emission: 312305, isCountry: true },
-  { source: "Henkel", co2Emission: 103123205, isCountry: false },
-  { source: "USA", co2Emission: 100.05, isCountry: true },
-  { source: "Germany", co2Emission: 200.05, isCountry: true },
-  { source: "Starbucks", co2Emission: 3213.05, isCountry: false },
-  { source: "Italy", co2Emission: 312305, isCountry: true },
+  { source: "Henkel", co2Emission: 1031205, isCountry: false },
+  { source: "Poland", co2Emission: 1321300.05, isCountry: true },
+  { source: "China", co2Emission: 20312320.05, isCountry: true },
+  { source: "Nike", co2Emission: 32132133.05, isCountry: false },
+  { source: "Google", co2Emission: 31312305, isCountry: false },
+  { source: "Apple", co2Emission: 103123205, isCountry: false },
+  { source: "Iran", co2Emission: 100.3125, isCountry: true },
+  { source: "Qatar", co2Emission: 200.321235, isCountry: true },
+  { source: "South Korea", co2Emission: 231231289, isCountry: true },
 ];
 
 const Table: React.FC = () => {
@@ -111,6 +110,7 @@ const Table: React.FC = () => {
                     "
                   >
                     {t("table.emissions")}
+                    {" in t"}
                   </th>
                 </tr>
               </thead>
