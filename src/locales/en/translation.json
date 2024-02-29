@@ -6,6 +6,7 @@
         "pricing" : "Pricing"
        },
     "table":{
+        "search" : "Search",
         "sort": "Sort",
         "sources": "Sources",
         "emissions" :"Emissions",

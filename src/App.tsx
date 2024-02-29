@@ -6,11 +6,12 @@ import Table from "./components/Table";
 import { useState } from "react";
 import i18n, { supportedLngs } from "./i18n/config";
 import Navbar from "./components/Navbar";
-import useLocalizeDocumentAttributes from "./test";
+import useLocalizeDocumentAttributes from "./i18n/directionality";
 
 function App() {
   const [filterLanguage, setLanguage] = useState("");
   useLocalizeDocumentAttributes();
+
   const handleChangeFilterChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {

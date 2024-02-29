@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import DOMPurify from "dompurify";
+
 interface EmissionData {
   source: String;
   co2Emission: number;
@@ -28,6 +30,11 @@ const Table: React.FC = () => {
   const [data, setData] = useState(initialData);
 
   const [filterCountry, setFilterCountry] = useState("");
+  const [searchCountry, setSearchCountry] = useState("");
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchCountry(DOMPurify.sanitize(event.target.value));
+  };
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilterCountry(event.target.value);
@@ -49,14 +56,20 @@ const Table: React.FC = () => {
             >
               {t("table.sort")}
             </button>
-
+            <input
+              type="text"
+              placeholder={t("table.search")}
+              value={searchCountry}
+              onChange={handleSearchChange}
+              className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none text-dark-green bg-mint-green rounded-lg border border-gray-200 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600dark:hover:bg-gray-700"
+            />
             <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
               <div className="flex items-center space-x-3 w-full md:w-auto">
                 <select
                   onChange={handleFilterChange}
                   id="actionsDropdownButton"
                   data-dropdown-toggle="actionsDropdown"
-                  className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none text-dark-green bg-mint-green rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none text-dark-green bg-mint-green rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600"
                 >
                   <option
                     className="text-white"
@@ -118,10 +131,14 @@ const Table: React.FC = () => {
                 {data
                   .filter(
                     (row) =>
-                      filterCountry === "" ||
-                      (filterCountry === "true"
-                        ? row.isCountry
-                        : !row.isCountry)
+                      (filterCountry === "" ||
+                        (filterCountry === "true"
+                          ? row.isCountry
+                          : !row.isCountry)) &&
+                      (searchCountry === "" ||
+                        row.source
+                          .toLowerCase()
+                          .includes(searchCountry.toLowerCase()))
                   )
                   .map((row, index) => (
                     <tr

@@ -6,6 +6,7 @@
         "pricing": "الأسعار"
     },
     "table": {
+        "search" : "يبحث",
         "sort": "فرز",
         "sources": "المصادر",
         "emissions": "انبعاثات",
