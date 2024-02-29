@@ -6,16 +6,17 @@ import Table from "./components/Table";
 import { useState } from "react";
 import i18n, { supportedLngs } from "./i18n/config";
 import Navbar from "./components/Navbar";
+import useLocalizeDocumentAttributes from "./test";
 
 function App() {
-  const [filterLanugage, setLanguage] = useState("");
+  const [filterLanguage, setLanguage] = useState("");
+  useLocalizeDocumentAttributes();
   const handleChangeFilterChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     setLanguage(event.target.value);
     i18n.changeLanguage(event.target.value);
   };
-
   return (
     <body className="h-screen bg-mint-green">
       {" "}

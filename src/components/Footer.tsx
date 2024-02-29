@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="fixed bottom-0 left-0 z-20 w-full p-4 bg-dark-green border-t border-gray-200 shadow md:flex md:items-center md:justify-between  dark:bg-gray-800 dark:border-gray-60">
+    <footer className="fixed bottom-0 left-0 z-20 w-full p-4 bg-dark-green border-t border-gray-200 shadow md:flex md:items-center md:justify-between dark:border-gray-60">
       <span className="text-sm text-gray-500 sm:text-center text-mint-green ">
         {" "}
         <a

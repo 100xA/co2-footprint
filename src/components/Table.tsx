@@ -1,4 +1,3 @@
-import { t } from "i18next";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -27,6 +26,7 @@ const initialData: EmissionData[] = [
 const Table: React.FC = () => {
   const { t } = useTranslation();
   const [data, setData] = useState(initialData);
+
   const [filterCountry, setFilterCountry] = useState("");
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -42,7 +42,7 @@ const Table: React.FC = () => {
     <section className="bg-mint-green dark:bg-gray-900 p-3 sm:p-5">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-12 mb-[50px]">
         <div className="bg-green dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-3 p-4">
             <button
               onClick={sortEmissions}
               className="bg-dark-green text-white font-bold py-2 px-4 rounded"

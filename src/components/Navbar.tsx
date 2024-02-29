@@ -15,7 +15,6 @@ const NavBar: React.FC = () => {
     <nav className="bg-dark-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               className="h-8 w-8"
@@ -26,8 +25,6 @@ const NavBar: React.FC = () => {
               {t("app")}
             </span>
           </div>
-
-          {/* Menu items */}
           <div className="hidden md:flex space-x-4">
             <a
               href="#"
@@ -71,8 +68,6 @@ const NavBar: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -80,19 +75,19 @@ const NavBar: React.FC = () => {
               href="#"
               className="text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Services
+              {t("navbar.services")}
             </a>
             <a
               href="#"
               className="text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Pricing
+              {t("navbar.pricing")}
             </a>
             <a
               href="#"
               className="text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Contact
+              {t("navbar.contact")}
             </a>
           </div>
         </div>

@@ -1,0 +1,23 @@
+{
+    "app": "بصمة ثاني أكسيد الكربون",
+    "navbar": {
+        "services": "الخدمات",
+        "contact": "اتصل",
+        "pricing": "الأسعار"
+    },
+    "table": {
+        "sort": "فرز",
+        "sources": "المصادر",
+        "emissions": "انبعاثات",
+        "select": {
+            "all": "الكل",
+            "countries": "الدول",
+            "companies": "الشركات"
+        }
+    },
+    "footer": {
+        "all_rights": "جميع الحقوق محفوظة",
+        "about": "حول",
+        "licensing": "ترخيص"
+    }
+}
